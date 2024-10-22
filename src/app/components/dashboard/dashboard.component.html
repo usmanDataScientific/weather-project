@@ -1,0 +1,25 @@
+<div *ngIf="error" class="alert alert-dismissible alert-danger text-center">
+    <strong>ERROR WE CANNOT FIND A RESULT</strong>
+  </div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="../../../assets/img/weather.png" alt="img" width="250px" height="250px">
+        </div>
+        <div class="col-lg-6">
+            <input type="text" [(ngModel)]="city" class="form-control form-control-lg size" placeholder="Enter your City...">
+            <div class="d-grid gap-2">
+                <button (click)="getWeather()" class="btn btn-primary btn-lg mt-2 size">Get Weather</button>
+              </div>
+              <div *ngIf="query" class="card mt-3">
+                <div class="card-body">
+                    <p><b>Temperature: </b>{{temperature | number: '1.2-2'}} *C</p>
+                    <p><b>Humedity: </b>{{humidity}}</p>
+                    <p><b>Weather: </b>{{weather}}</p>
+                </div>
+                </div>
+        </div>
+       
+    </div>
+</div>
+
